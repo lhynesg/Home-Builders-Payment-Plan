@@ -1,2 +1,4 @@
 # Home-Builders-Payment-Plan
-A system with important information of the current processes, requirements, constraints and problems involved in the task of preparing the house building payment plan.
+
+The development of the system was focused on a user friendly design of the system and the loaning process, full computation, and summarization of all important in building the house.
+
