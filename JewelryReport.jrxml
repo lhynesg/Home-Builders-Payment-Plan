@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="JewelryReport" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1b9ec68f-395b-4fda-9bf6-ceca5ad86430">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     JEWELRY."NUMBER" AS JEWELRY_NUMBER,
+     JEWELRY."CODE" AS JEWELRY_CODE,
+     JEWELRY."DESCRIPTION" AS JEWELRY_DESCRIPTION,
+     JEWELRY."GRAMS" AS JEWELRY_GRAMS,
+     JEWELRY."PRICE" AS JEWELRY_PRICE,
+     JEWELRY."ITEM" AS JEWELRY_ITEM,
+     JEWELRY."ITEM_ADDED" AS JEWELRY_ITEM_ADDED,
+     JEWELRY."ITEM_UPDATED" AS JEWELRY_ITEM_UPDATED,
+     JEWELRY."QUANTITY" AS JEWELRY_QUANTITY
+FROM
+     "USER"."JEWELRY" JEWELRY]]>
+	</queryString>
+	<field name="JEWELRY_NUMBER" class="java.lang.String"/>
+	<field name="JEWELRY_CODE" class="java.lang.String"/>
+	<field name="JEWELRY_DESCRIPTION" class="java.lang.String"/>
+	<field name="JEWELRY_GRAMS" class="java.math.BigDecimal"/>
+	<field name="JEWELRY_PRICE" class="java.math.BigDecimal"/>
+	<field name="JEWELRY_ITEM" class="java.lang.String"/>
+	<field name="JEWELRY_ITEM_ADDED" class="java.sql.Date"/>
+	<field name="JEWELRY_ITEM_UPDATED" class="java.sql.Date"/>
+	<field name="JEWELRY_QUANTITY" class="java.lang.Integer"/>
+	<group name="JEWELRY_ITEM">
+		<groupExpression><![CDATA[$F{JEWELRY_ITEM}]]></groupExpression>
+		<groupHeader>
+			<band height="50">
+				<textField>
+					<reportElement x="57" y="0" width="100" height="20" uuid="18e4bf97-846a-41bf-840d-c649331ca56e"/>
+					<textFieldExpression><![CDATA[$F{JEWELRY_ITEM}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="57" height="20" uuid="f88ff5ad-a03c-4efb-8aec-dd94288e1435"/>
+					<text><![CDATA[Item Type:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="30" width="46" height="20" uuid="35ef5a3e-fd91-4d81-b32e-806edd25ceb6"/>
+					<text><![CDATA[NUMBER]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="46" y="30" width="71" height="20" uuid="77dc813d-4bba-4ab6-8425-98883df848bd"/>
+					<text><![CDATA[CODE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="284" y="30" width="40" height="20" uuid="45ab654e-1837-462f-b5da-179525c48d09"/>
+					<text><![CDATA[GRAMS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="324" y="30" width="71" height="20" uuid="0d30a20f-055b-4ad0-a61b-f416819756ba"/>
+					<text><![CDATA[PRICE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="30" width="71" height="20" uuid="6bb59071-6848-4f76-af6f-d007a4cab0b0"/>
+					<text><![CDATA[ITEM UPDATED]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="117" y="30" width="167" height="20" uuid="9da1b6f7-a6cc-4f85-8006-d535b19cca57"/>
+					<text><![CDATA[DESCRIPTION]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="466" y="30" width="71" height="20" uuid="e154d87b-3a55-424c-9ebd-1a6535ab3ad5"/>
+					<text><![CDATA[ITEM ADDED]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="537" y="30" width="30" height="20" uuid="d1e81c2a-39af-4df4-ae14-8ffe5ea456b6"/>
+					<text><![CDATA[QTY.]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="25">
+				<textField>
+					<reportElement x="537" y="0" width="30" height="20" uuid="9b21b466-8088-49cd-be7e-0e74a96d878f"/>
+					<textFieldExpression><![CDATA[$V{JEWELRY_ITEM_COUNT}]]></textFieldExpression>
+				</textField>
+				<break>
+					<reportElement x="0" y="12" width="100" height="1" uuid="d7d5e93e-9461-43de-942c-c23b833b2dad"/>
+				</break>
+				<staticText>
+					<reportElement x="437" y="0" width="100" height="20" uuid="bd675a2f-53f4-4d2d-a215-a6820608b538"/>
+					<text><![CDATA[Total Items:]]></text>
+				</staticText>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="46" height="20" uuid="2b24c7dd-6ddd-49af-9f38-7dd02f5b1198"/>
+				<textFieldExpression><![CDATA[$F{JEWELRY_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="46" y="0" width="71" height="20" uuid="83fe7148-13a6-4096-ba49-62c1d743c08f"/>
+				<textFieldExpression><![CDATA[$F{JEWELRY_CODE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="0" width="40" height="20" uuid="714d396d-df06-41f4-b71b-c9690eeb69b8"/>
+				<textFieldExpression><![CDATA[$F{JEWELRY_GRAMS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="324" y="0" width="71" height="20" uuid="5ec8a6e3-9f84-42b4-ab69-0e71e40819dc"/>
+				<textFieldExpression><![CDATA[$F{JEWELRY_PRICE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="395" y="0" width="71" height="20" uuid="6e6b7f2d-5c92-456e-90f0-26452143b835"/>
+				<textFieldExpression><![CDATA[$F{JEWELRY_ITEM_UPDATED}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="117" y="0" width="167" height="20" uuid="b42bd632-252e-48d8-bba3-df27d385f084"/>
+				<textFieldExpression><![CDATA[$F{JEWELRY_DESCRIPTION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="466" y="0" width="71" height="20" uuid="97d9f1cf-2106-443d-8dc4-8f21d6d9cc91"/>
+				<textFieldExpression><![CDATA[$F{JEWELRY_ITEM_ADDED}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="537" y="0" width="30" height="20" uuid="a7d3f645-31ac-4941-80ec-6ca317416778"/>
+				<textFieldExpression><![CDATA[$F{JEWELRY_QUANTITY}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
